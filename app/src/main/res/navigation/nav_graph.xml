@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/assignmentListFragment">
+
+    <fragment
+        android:id="@+id/assignmentListFragment"
+        android:name="com.example.ddeadlinehero.ui.list.AssignmentListFragment"
+        android:label="Assignments">
+
+        <action
+            android:id="@+id/action_assignmentListFragment_to_completedFragment"
+            app:destination="@id/completedFragment">
+            <argument
+                android:name="fromHome"
+                app:argType="boolean"
+                android:defaultValue="false" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/completedFragment"
+        android:name="com.example.ddeadlinehero.ui.completed.CompletedFragment"
+        android:label="Completed">
+
+        <argument
+            android:name="fromHome"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.ddeadlinehero.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+</navigation>
